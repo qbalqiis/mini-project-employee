@@ -1,0 +1,61 @@
+<h3 mat-dialog-title>Add Employee Form </h3>
+<div mat-dialog-content>
+  <form [formGroup]="employeeForm">
+    <mat-form-field appearance="outline">
+      <mat-label>Username</mat-label>
+      <input formControlName="userName" matInput placeholder="Qori Balqis">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>First name</mat-label>
+      <input formControlName="firstName" matInput placeholder="Qori">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>last Name</mat-label>
+      <input formControlName="lastName" matInput placeholder="Balqis">
+    </mat-form-field>
+    <mat-form-field>
+      <input formControlName="birthDate" matInput [min]="" [max]="currentDate" [matDatepicker]="picker" placeholder="Birth Date">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input formControlName="email" matInput placeholder="qoribalqis@example.com">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Group</mat-label>
+      <mat-select formControlName="group" placeholder="Department">
+        <mat-option value="Software Developers">Development</mat-option>
+        <mat-option value="Finance">Finance</mat-option>
+        <mat-option value="HR">HR</mat-option>
+        <mat-option value="Sales">Sales</mat-option>
+        <mat-option value="Digital Marketing">Digital Marketing</mat-option>
+        <mat-option value="Web Designer">Web Designer</mat-option>
+        <mat-option value="IT Support">IT Support</mat-option>
+        <mat-option value="Administration">Administration</mat-option>
+        <mat-option value="Sales Supervisor">Sales Supervisor</mat-option>
+        <mat-option value="Product Manager">Product Manager</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Status</mat-label>
+      <mat-select formControlName="status" placeholder="Single">
+        <mat-option value="Married">Married</mat-option>
+        <mat-option value="Single">Single</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Description</mat-label>
+      <input formControlName="description" matInput placeholder="Mengelolah keuangan perusahaan">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Salary</mat-label>
+      <input formControlName="salary" matInput placeholder="exp= Rp.6.000.000">
+    </mat-form-field>
+  </form>
+  <div mat-dialog-actions [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+    <button mat-raised-button color="primary" (click)="addEmployee()">{{actionBtn}}</button>
+  </div>
+
+</div>
